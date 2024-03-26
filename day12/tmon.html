@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>티몬 광고 페이지</title>
+    <style>
+        *{margin: 0px; padding: 0px;}
+        body{
+            background-color: #f4f4f4; 
+        }
+        .total{
+            width: 800px;
+            margin: 0 auto;
+        }
+        header{
+            height: 94px;
+            position: relative;
+        }
+        #interior{
+            /* 800/2=400 , 160/2 = 80 */
+            position: absolute;
+            left: 320px;
+        }
+        #logo{
+            position: absolute;
+            /* 94/2=47 24/2=12 47-12=35 */
+            top: 50px;
+            left: 10px;
+        }
+        section{
+            height: 30px;
+            background-color: #2dbfb5;
+            position: relative;
+            text-align: right;
+
+        }
+        #thing{
+            position: absolute;
+            top: 7.5px;
+            left: 240px;
+        }
+        section b{
+            color: white;
+            position: absolute;
+            top: 6px;
+            left: 700px;
+        }
+        .div4{
+            background-color: white;
+            height: 330px;
+            float: left;
+        }
+        .div4 img{
+            width: 263px;
+        }
+        .div4_2, .div4_3{
+            margin-left: 5.5px;
+        }
+        .ex1{
+            color: red;
+            margin-left: 8px;
+            font-size: 15px;
+            float: left;
+        }
+        .ex2{
+            font-size: 15px;
+            margin-right: 10px;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="total">
+        <header>
+            <img src="image/top_logo.jpg" alt="로고" id="logo">
+            <img src="image/top_interior.jpg" alt="" id="interior">
+        </header>
+        <section>
+            <img src="image/text_interior.jpg" alt="" id="thing">
+            <b>2023.5.18</b>
+        </section>
+        <div class="div3">
+            <img src="image/middle.jpg" alt="">
+        </div>
+        <div class="div4 div4_1">
+            <img src="image/tmon01.jpg" alt="">
+            <br>
+            <b class="ex1">티몬가</b>
+            <b class="ex2">아직도 앉아 있나요? 바른<br>
+                자세 스탠딩 책상
+            </b>
+        </div>
+        <div class="div4 div4_2">
+            <img src="image/tmon02.jpg" alt="">
+            <br>
+            <b class="ex1">티몬가</b>
+            <b class="ex2">드라마 같은 홈스타일<br>
+                분위기 있는 스탠드
+            </b>
+        </div>
+        <div class="div4 div4_3">
+            <img src="image/tmon03.jpg" alt="">
+            <br>
+            <b class="ex1">티몬가</b>
+            <b class="ex2">집에서 하는 냅킨공예
+            </b>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+.total{
+    width: 900px;
+    height: 1050px;
+    background-color: lightgray;
+    margin: auto;
+}
+.div1{
+    float: left;
+}
+.div1>img{
+    width: 350px;
+    margin-top: 10px;
+}
+#left{
+    width: 350px;
+}
+#right{
+    width: 450px;
+    margin-top: 20px;
+    text-align: right;
+    margin-right: 10px;
+}
+section{
+    text-align: center;
+}
+/* 하이퍼링크 속성 하단에 밑줄+파랑/보라/빨강 */
+a{
+    text-decoration: none;
+    color: black;
+}
