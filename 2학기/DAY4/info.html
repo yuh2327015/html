@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정보를 알려주마!</title>
+    <script>
+        function change() {
+            // let p = document.getElementById('firstP');
+            //let classP =document.getElementsByClassName('secondP')[0];
+            firstP.innerHTML = 
+            "2023년 10월 9일 한글날은 쉬는 날입니다. 하지만 동영상 수업이 있습니다.";
+            //classP.innerHTML = "기간내에 반드시 수업에 참여하시어 불이익이 없으시기 바랍니디.";
+            document.getElementsByClassName('secondP')[0].innerHTML = 
+            "기간 내에 수업에 참여하시어 불이익이 없으시길 바랍니다. 참고로 동영상 시청 기간은 일주일입니다."
+            document.getElementsByTagName('article')[0].innerHTML =
+            "바부팅";
+        }
+    </script>
+</head>
+<body>
+    <h3>버튼을 클릭했을 때 정보가 보여지는 예제</h3>    
+    <hr>
+    <button onclick="change()">한글날</button>
+    <p id="firstP"></p>
+    <p class="secondP"></p>
+    <article></article>
+</body>
+</html>
+
+

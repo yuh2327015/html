@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크립트 기초 - 숨기기</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .total{width: 800px; margin: auto;}
+        article{background-color: lightpink; height: 60px; position: relative;}
+        section{background-color: lightyellow; height: 60px; position: relative;}
+        nav{background-color: skyblue; height: 60px; position: relative;}
+        .h1{position: absolute; top:50%; left: 50%; transform:translate(-50%,-50%);}
+        .div{height: 100px; background-color: aliceblue; display: none;}
+    </style>
+    <script>
+        window.onload = function(){
+            let article = document.getElementsByTagName('article')[0];
+            let section = document.getElementsByTagName('section')[0];
+            let nav = document.getElementsByTagName('nav')[0]
+            
+            let count1 = 0;
+            let count2 = 0;
+            let count3 = 0;
+
+            article.addEventListener('click',function(){
+                if(count1==0){
+                    div1.style.display = 'block';
+                    count1=1;
+                }else{
+                    none();
+                }
+            });
+            section.addEventListener('click',function(){
+                if(count2==0){
+                    div2.style.display = 'block';
+                    count2=1;
+                }else{
+                    none();
+                }
+            });
+            nav.addEventListener('click',function(){
+                if(count3==0){
+                    div3.style.display = 'block';
+                    count3=1;
+                }else{
+                    none();
+                }
+            });
+            function none() {
+                div1.style.display = 'none';
+                div2.style.display = 'none';
+                div3.style.display = 'none';
+                count1 = 0;
+                count2 = 0;
+                count3 = 0;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="total">
+        <article>
+            <h1 class="h1">스크립트 기초1</h1>
+        </article>
+        <div class="div" id="div1"></div>
+        <section>
+            <h1 class="h1">스크립트 기초2</h1>
+        </section>
+        <div class="div" id="div2"></div>
+        <nav>
+            <h1 class="h1">스크립트 기초3</h1>
+        </nav>
+        <div class="div" id="div3"></div>
+    </div>
+</body>
+</html>

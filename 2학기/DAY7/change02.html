@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charseㅋ`t="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10월 18일 기말고사 준비</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .div1{height: 150px;}
+        #div1_1{width: 30%; height: 150px; text-align: center; float: left;}
+        /* overflow:hidden; 콘텐츠의 사이즈가 범위를 넘어가면 감추라는 프로퍼티 */
+        #div1_2{width: 70%; height: 150px; text-align: center; float: left; overflow: hidden;}
+        #div1_2 ol{margin-left: 40px;}
+        #div1_2 ol li{margin-top: 45px; display: block; width: 90px; margin-top: 45px; 
+            float: left; padding-left: 11px; padding-right: 11px;
+             border: 1px solid black; background-color: white;}
+        #div1_2 ol li:first-child{border-radius: 10px 0 0 10px;} 
+        #div1_2 ol li:last-child{border-radius: 0 10px 10px 0;}
+        a{text-decoration: none; color: black; font-size: 25px;}
+        .div{width: 100px; height: 100px;}
+        #div1{background-color: green;}
+        #div2{background-color: yellow;}
+        #div3{background-color: red;}
+        #div4{background-color: orange;}
+    </style>
+    <script>
+        window.onload = function (){
+            let BL = document.getElementsByClassName('tt')[0];
+            let BR = document.getElementsByClassName('tt')[1];
+            let div = document.getElementsByClassName('div');
+            BL.addEventListener('click',function(){
+                for(let i = 0;i<div.length;i++){
+                    div[i].style.display = "none";
+                }
+            })
+            BR.addEventListener('click',function(){
+                for(let i = 0;i<div.length;i++){
+                    div[i].style.display = "block";
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <div class="div1">
+        <div id="div1_1">   
+            <img src="gameMajor.PNG" alt="게임콘텐츠전공">
+        </div>
+        <div id="div1_2">
+            <ol>
+                <li><a href="change01.html">메뉴1</a></li>
+                <li><a href="change02.html">메뉴2</a></li>
+                <li><a href="change03.html">메뉴3</a></li>
+                <li><a href="#">메뉴4</a></li>
+                <li><a href="#">메뉴5</a></li>
+            </ol>
+        </div>
+    </div>
+    <div>
+        <button class="tt">버튼을 누르면 사라져요!</button>
+        <button class="tt">버튼을 누르면 나타나요!</button>
+        <br><br>
+        <div class="div" id="div1"></div>
+        <div class="div" id="div2"></div>
+        <div class="div" id="div3"></div>
+        <div class="div" id="div4"></div>
+    </div>
+</body>
+</html>

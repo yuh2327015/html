@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캔버스 그리기(시험출제높음)</title>
+</head>
+<body>
+    <h3>캔버스 그리기 맛보기</h3>
+    <hr>
+    <canvas id="myCanvas" style="background-color: aliceblue;" width="250" height="150"></canvas>
+    <script>
+        let canvas = document.getElementById("myCanvas");
+        let context = canvas.getContext("2d");
+        //파란색으로 사각형 그리기
+        context.beginPath(); //번 경로 만들기
+        context.strokeStyle = "blue"; //선의 색깔
+        context.rect(30,30,50,50);//x, y, width, height
+        context.stroke();//선그려라
+        //violet 색으로 채운 사각형 그리기
+        context.beginPath(); //번 경로 만들기
+        context.fillStyle = "violet"; //선의 색깔
+        context.rect(60,60,50,50);//x, y, width, height
+        context.fill();
+        //green 색으로 텍스트 내부만 그리기
+        context.font = "20px Gothic";
+        context.fillStyle ="green";
+        context.fillText("Text in Canvas", 100, 50);
+
+        context.beginPath();
+        context.moveTo(120,20);//시작점을 만들어줌
+        context.lineTo(20,50);//실제로 선그려주는거
+        context.lineTo(150,120);
+        context.closePath();//경로 닫기
+        context.stroke();
+    </script>
+</body>
+</html>

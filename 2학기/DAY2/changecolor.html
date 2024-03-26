@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>색깔 바꾸기</title>
+    <style>
+        *{margin:0; padding: 0;}
+        .div1{height: 150px; background-color: red;}
+        #bts{width: 50px; height: 100px; background-color: black; margin: 25px 50px 0 25px; float: left;}
+        #bt_text1{width: 50px; height: 100px; background-color: pink; margin: 25px 50px 0 25px; float: left;
+        }
+        #bt_text2{width: 50px; height: 100px; background-color: yellow; margin: 25px 50px 0 25px; float: left;}
+        #bts b{display: block; margin-top: 20px; color: white;}
+        #bt_text1 b{display: block; margin-top: 20px; color: black;}
+        #bt_text2 b{display: block; margin-top: 20px; color: red;}
+        .div2{background-color: yellow; height: 300px; width: 15%; float: left;}
+        .ccc1{height: 300px; width: 15%; background-color: orange; float: left;}
+        .div3{background-color: blue; height: 300px; width: 85%; float: left;}
+        .ccc2{background-color: green; height: 300px; width: 15%; float: left;}
+        #cc{margin-top: 50px; float: left;}
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <div id="bts">
+            <b id="bt1">버튼1</b>
+            <b id="bt2">버튼2</b>
+        </div>
+    <div id="textbox"></div>
+    </div>
+    <div class="div2">
+        <input type="button" id="inp1" value="주황색">
+        <input type="button" id="inp2" value="녹색">
+    </div>
+    <div class="div3">
+
+    </div>
+    <script>
+        //<b id="bt1">버튼1</b>
+        let div_bt1 = document.getElementById('bt1');
+        let bts = document.getElementById('bts');
+        let div_bt2 = document.getElementById('bt2');
+        //사용자 행동 예: click, dblclick, mousemove, mouseover
+        //익명함수 사용
+        div_bt1.addEventListener("click", function(){
+            bts.id = 'bt_text1';
+        });
+        div_bt2.addEventListener("click", function(){
+            bts.id = 'bt_text2';
+            textbox.innerHTML = "<h1 id='cc'>자바스크립트에 오신걸 환영합니다!!</h1>"
+        });
+        
+        let bts2 = document.getElementsByClassName('div2')[0];
+        inp1.addEventListener("mouseover", function(){
+            bts2.className = 'ccc1';
+        });
+        inp2.addEventListener("mouseover", function(){
+            bts2.className = 'ccc2';
+        });
+    </script>
+</body>
+</html>

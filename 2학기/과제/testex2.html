@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네모 상자 색 변경</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+        .red {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <button id="changeColorButton">변해라</button>
+    <script>
+        const boxes = document.querySelectorAll('.box');
+        const changeColorButton = document.getElementById('changeColorButton');
+
+        changeColorButton.addEventListener('click', () => {
+            boxes.forEach((box, index) => {
+                if ([0, 2, 4, 6, 8].includes(index)) {
+                    box.classList.add('red');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

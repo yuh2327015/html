@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>박스 움직이기</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        section{width: 900px; height: 350px; background-color: pink; position: relative;}
+        #box{height: 60px; width: 60px; position: absolute; top: 0; left: 0;
+             background-color: yellow;}
+        div{text-align: center; font-size: 50px; background-color: black;
+        color: white; width: 60px; height: 60px; cursor: pointer;}
+        #btT{margin-left: 60px;}
+        #btL{margin-right: 60px; float: left;}
+        #btR{float: left;}
+        #btB{margin: 60px 0 0 -120px; float: left;}
+    </style>
+    <script>
+        window.onload = function(){
+            let box = document.getElementById('box');
+            let btT = document.getElementById('btT');
+            let btL = document.getElementById('btL');
+            let btR = document.getElementById('btR');
+            let btB = document.getElementById('btB');
+            let posX = 0;
+            let posY = 0;
+            btT.addEventListener('mouseover', function(){
+                console.log('posY는 ',posY);
+                if(posY<10){ 
+
+                }else{
+                    posY -= 10;
+                    box.style.top =posY + "px";
+                }
+            });
+            btB.addEventListener('mouseover', function(){
+                console.log('posY는 ',posY);
+                if(posY>280){
+
+                }else{
+                    posY += 10;
+                    box.style.top = posY + "px";
+                }
+            });
+            btL.addEventListener('mouseover', function(){
+                console.log('posX는 ',posX);
+                if(posX<10){
+
+                }else{
+                posX -= 10;
+                box.style.left = posX + 'px';
+                }
+            });
+            btR.addEventListener('mouseover', function(){
+                console.log('posX는 ',posX);
+                if(posX>830){
+
+                }else{
+                    posX += 10;
+                    box.style.left = posX + 'px';
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <section>
+        <nav id="box"></nav> 
+    </section>
+    <div id="btT"><b>상</b></div>
+    <div id="btL"><b>좌</b></div>
+    <div id="btR"><b>우</b></div>
+    <div id="btB"><b>하</b></div>
+</body>
+</html>

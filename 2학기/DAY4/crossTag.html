@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>태그 네임으로 십자가 바꾸기</title>
+    <style>
+        .box{width: 300px;}
+        section, nav{width: 100px; height: 100px; background-color: hotpink; float: left;}
+    </style>
+</head>
+<body>
+    <button id="button">십작 나와라!</button>
+    <button id="back">돌아와라!</button>
+    <div class="box">
+        <section></section><nav></nav><section></section>
+        <nav></nav><nav></nav><nav></nav>
+        <section></section><nav></nav><section></section>
+        <section></section><nav></nav><section></section>
+    </div>
+    <script>
+        let nav = document.getElementsByTagName('nav');
+
+        button.addEventListener('click', function(){
+            // nav[0].style.backgroundColor = 'black' ;
+            // nav[1].style.backgroundColor = 'black' ;
+            // nav[2].style.backgroundColor = 'black' ;
+            // nav[3].style.backgroundColor = 'black' ;
+            // nav[4].style.backgroundColor = 'black' ;
+            // nav[5].style.backgroundColor = 'black' ;
+            for(let i=0;i<nav.length;i++){
+                nav[i].style.backgroundColor = 'black';
+            }
+        });
+        back.addEventListener('click',function(){
+            for(i=0;i<nav.length;i++)
+                nav[i].style.backgroundColor ='hotpink';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 계속 바뀌는 화면</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        img{width: 300px; float: left;}
+        nav,footer{width: 800px; height: 300px;}
+        #img02,#img04{margin-left: 30px;}
+        nav{margin-bottom: 20px;}
+    </style>
+    <script>
+        let speed = 2000;
+        let t;
+        let count = 0;
+        function changeImage() {
+            if(document.body){
+                if(count == 0){
+                    document.getElementById('img01').src = "image/shop01_2.JPG";
+                    document.getElementById('img02').src = "image/shop02_2.JPG";
+                    document.getElementById('img03').src = "image/shop03_2.JPG";
+                    document.getElementById('img04').src = "image/shop04_2.JPG";
+                    count = 1;
+                }else if(count == 1){
+                    document.getElementById('img01').src = "image/shop01_1.JPG";
+                    document.getElementById('img02').src = "image/shop02_1.JPG";
+                    document.getElementById('img03').src = "image/shop03_1.JPG";
+                    document.getElementById('img04').src = "image/shop04_1.JPG";
+                    count = 0;
+                }
+                t = setTimeout('changeImage()',speed);
+            }
+        }
+    </script>
+</head>
+<body onload="changeImage()">
+    <section>
+        <nav>
+            <div>
+                <img src="image/shop01_1.JPG" alt="" id="img01">
+            </div>
+            <div>
+                <img src="image/shop02_1.JPG" alt="" id="img02">
+            </div>
+        </nav>
+        <footer>
+            <div>
+                <img src="image/shop03_1.JPG" alt="" id="img03">
+            </div>
+            <div>
+                <img src="image/shop04_1.JPG" alt="" id="img04">
+            </div>
+        </footer>
+    </section>
+</body>
+</html>

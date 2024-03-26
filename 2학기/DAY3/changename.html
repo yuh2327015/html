@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이름 바꾸기</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .div1{width: 25%; height: 300px; float: left;}
+        #div1_1{background-color: red;}
+        #div1_2{background-color: blue;}
+        #div1_3{background-color: black;}
+        #div1_4{background-color: yellow;}
+        #bt01{width: 100px; margin: 30px 0 0 30px;}
+        #bt02{width: 100px; margin: 30px 0 0 30px;}
+        h1{color: red;}
+    </style>
+    <script>
+        window.onload = function(){
+            let div1_1 = document.getElementById('div1_1');
+            let div1_2 = document.getElementById('div1_2');
+            let div1_3 = document.getElementById('div1_3');
+            let div1_4 = document.getElementById('div1_4');
+            // let div1 = document.getElementsByClassName('div1');
+            let divBox1 = document.getElementsByClassName('div1')[0];
+            let divBox2 = document.getElementsByClassName('div1')[1];
+            let divBox3 = document.getElementsByClassName('div1')[2];
+            let divBox4 = document.getElementsByClassName('div1')[3];
+
+
+            let bt01 = document.getElementById('bt01');
+            // let bt02 = document.getElementById('bt02');
+
+            // let name1 = document.getElementById('name1');
+            let name2 = document.getElementById('name2');
+            let name3 = document.getElementById('name3');
+
+            let count1 = 0;
+            let count2 = 0;
+            let count3 = 0;
+
+
+            bt01.addEventListener('click', function(){
+                // div1_1.style.backgroundColor = 'orange';
+                // div1_2.style.backgroundColor = 'orange';
+                // div1_3.style.backgroundColor = 'orange';
+                // div1_4.style.backgroundColor = 'orange';
+                //ClassName('div1')
+                // div1[0].style.backgroundColor = 'orange' ;
+                // div1[1].style.backgroundColor = 'orange' ;
+                // div1[2].style.backgroundColor = 'orange' ;
+                // div1[3].style.backgroundColor = 'orange' ;
+                divBox1.style.backgroundColor = 'orange';
+                divBox2.style.backgroundColor = 'orange';
+                divBox3.style.backgroundColor = 'orange';
+                divBox4.style.backgroundColor = 'orange';
+            });
+                bt02.addEventListener('click', function(){
+                divBox1.style.backgroundColor = 'red';
+                divBox2.style.backgroundColor = 'blue';
+                divBox3.style.backgroundColor = 'black';
+                divBox4.style.backgroundColor = 'yellow';
+            });
+                document.getElementById('name1').addEventListener('click', function(){
+                    if(count1==1){
+                        document.getElementById('name1').innerHTML 
+                        = "<h6 style = 'color:green'>고양이 </h6>";
+                        divBox2.style.backgroundColor = 'orange';
+                        count1=0;
+                    }else{
+                        document.getElementById('name1').innerHTML
+                        = "<h6 style='color:green'>강아지</h6>";
+                        divBox2.style.backgroundColor = 'hotpink';
+                        count1=1;
+                    }
+                });
+                name2.addEventListener('click', function(){
+                    if(count2==1){
+                        document.getElementById('name2').innerHTML 
+                        = "<h6 style = 'color:green'>곱창볶음 </h6>";
+                        divBox3.style.backgroundColor = 'orange';
+                        count2 = 0;
+                    }else{
+                        document.getElementById('name2').innerHTML
+                        = "<h6 style='color:green'>제육볶음</h6>";
+                        divBox3.style.backgroundColor = 'hotpink';
+                        count2 = 1;
+                    }
+                });
+               name3.addEventListener('click', function(){
+                    if(count3==1){
+                        document.getElementById('name3').innerHTML 
+                        = "<h6 style = 'color:green'>돈까스 </h6>";
+                        divBox4.style.backgroundColor = 'orange';
+                        count3=0;
+                    }else{
+                        document.getElementById('name3').innerHTML
+                        = "<h6 style='color:green'>남자</h6>";
+                        divBox4.style.backgroundColor = 'hotpink';
+                        count3=1;
+                    }
+                });
+        }
+    </script>
+</head>
+<body>
+    <div id="div1_1" class="div_1 div1">
+        <img src="button/bt01.png" alt="" id="bt01"><br>
+        <img src="button/bt02.png" alt="" id="bt02">
+    </div>
+    <div id="div1_2" class="div_2 div1">
+        <h1 id="name1">고양이</h1>
+    </div>
+    <div id="div1_3" class="div_3 div1">
+        <h1 id="name2">곱창볶음</h1>
+    </div>
+    <div id="div1_4" class="div_4 div1">
+        <h1 id="name3">돈까스</h1>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강아지 사진 배경</title>
+    <script>
+        let speed = 1000;
+        let imgpath = 'dog/';
+        let pic = new Array();
+        pic[0] = imgpath + "dog01.png";
+        pic[1] = imgpath + "dog02.png";
+        pic[2] = imgpath + "dog03.png";
+        pic[3] = imgpath + "dog04.png";
+        pic[4] = imgpath + "dog05.png";
+        let t; //타이머 아이디
+        let j = 0; //인덱스 번호
+        function runBGSlideshow() {
+            if(document.body){
+                document.body.background = pic[j];
+                j=j+1;
+                if(j>(pic.length-1)){
+                    j=0;
+                }
+                t = setInterval(runBGSlideshow,speed);
+            }
+        }
+    </script>
+</head>
+<body onload="runBGSlideshow()">
+    
+</body>
+</html>

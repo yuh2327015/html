@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        #top{width: 800px; height: 100px; background-color: aqua;}
+        .left{width: 200px; height: 400px; background-color: aquamarine;}
+        .right{width: 600px; height: 400px; margin-left: 200px; margin-top: -400px; background-color: #8a2be2;}
+        #textbox{margin: 100px ; padding: 100px;
+            width: 150px; height: 50px; text-align: center;}
+        .btns{margin: 50px; width: 100px;}
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="top">
+            <h2>
+                <img id="profilePic" src="a.png" alt="">
+                <span id="welcomeMsg">ID 입력하셈</span>
+                <input id="logInput" type="text"><input id="logBtn" type="button" value="로그인">
+            </h2>
+        </div>
+        <div class="div2">
+            <div class="left">
+                <input class="btns" id="btn1" type="button" value="버튼1">
+                <input class="btns" id="btn2" type="button" value="버튼2">
+                <input class="btns" id="btn3" type="button" value="버튼3">
+            </div>
+            <div class="right">
+                <textarea name="" id="textbox"></textarea>
+            </div>
+        </div>
+    </div>
+    <script>
+        let isLoggedIn = false;
+        const loginInput = document.getElementById('logInput');
+        const welcomeMsg = document.getElementById('welcomeMsg');
+        const profilePic = document.getElementById('profilePic');
+        const loginBtn = document.getElementById('logBtn');
+        const textbox = document.getElementById('textbox');
+
+        function toggleLogin() {
+            if (!isLoggedIn) {
+                const username = loginInput.value;
+                if (username !== '') {
+                    isLoggedIn = true;
+                    loginInput.style.display = 'none';
+                    welcomeMsg.textContent = username + '님';
+                    profilePic.style.display = 'inline-block';
+                    loginBtn.value = 'Logout';
+                } else {
+                    alert('없는 아이디임.');
+                }
+            } else {
+                isLoggedIn = false;
+                loginInput.style.display = 'inline-block';
+                welcomeMsg.textContent = '로그인';
+                profilePic.style.display = 'none';
+                loginBtn.value = 'Login';
+            }
+        }
+
+        loginBtn.addEventListener('click', toggleLogin);
+
+        const btnContents = {
+            btn1: "ㅎㅇ ",
+            btn2: "이은석교수님 과제가 너무어려워요 ",
+            btn3: ""
+        };
+
+        function ButtonClick(btnId) {
+            if (btnContents[btnId] === "") {
+                if (textbox.value === "스틸." || textbox.value === "") {
+                    alert("내용이 없음.");
+                    return;
+                }
+
+                for (const otherBtnId in btnContents) {
+                    if (btnContents[otherBtnId] === textbox.value) {
+                        btnContents[btnId] = textbox.value;
+                        btnContents[otherBtnId] = "";
+                        textbox.value = "스틸.";
+                        return;
+                    }
+                }
+            }
+            textbox.value = btnContents[btnId];
+        }
+
+        document.getElementById('btn1').addEventListener('click', () => ButtonClick('btn1'));
+        document.getElementById('btn2').addEventListener('click', () => ButtonClick('btn2'));
+        document.getElementById('btn3').addEventListener('click', () => ButtonClick('btn3'));
+
+    </script>
+</body>
+</html>

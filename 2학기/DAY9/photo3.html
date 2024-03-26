@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사진보기</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        section{height: 350px; background-color: pink; text-align: center;
+        position: relative;}
+        .slide{position: absolute; width: 900px; top: 50%;
+        left: 50%; transform: translateX(-50%)translateY(-50%);}
+        article{width: 500px; height: 250px;
+        background-color: black; margin: 30px auto 0 auto; position: relative;
+        float: left;}
+        article img{position: absolute; top: 0; left: 0; width: 500px; 
+        height: 250px; display: none;}
+        #B_bt, #N_bt{margin-top: 100px; float: left;}
+        .point{display: inline-block; margin-right: 10px;}
+        .point img{width: 20px;}
+    </style>
+</head>
+<body>
+    <section>
+        <div class="slide">
+            <img src="image/back.png" alt="" id="B_bt">
+            <article>
+                <img src="image/image01.JPG" alt="" id="img01">
+                <img src="image/image02.JPG" alt="" id="img02">
+                <img src="image/image03.JPG" alt="" id="img03">
+                <img src="image/image04.JPG" alt="" id="img04">
+                <img src="image/image05.JPG" alt="" id="img05">
+            </article>
+            <img src="image/next.png" alt="" id="N_bt">
+        </div>
+        <br>
+        <ul id="points">
+            <li class="point" id="po1">
+                <img src="image/point.png" alt="">
+            </li>
+            <li class="point" id="po2">
+                <img src="image/point.png" alt="">
+            </li>
+            <li class="point" id="po3">
+                <img src="image/point.png" alt="">
+            </li>
+            <li class="point" id="po4">
+                <img src="image/point.png" alt="">
+            </li>
+            <li class="point" id="po5">
+                <img src="image/point.png" alt="">
+            </li>
+        </ul>
+    </section>
+    <script>
+        let img01 = document.getElementById('img01');
+        let img02 = document.getElementById('img02');
+        let img03 = document.getElementById('img03');
+        let img04 = document.getElementById('img04');
+        let img05 = document.getElementById('img05');
+        let B_bt = document.getElementById('B_bt');
+        let N_bt = document.getElementById('N_bt');
+        let po1 = document.getElementById('po1');
+        let po2 = document.getElementById('po2');
+        let po3 = document.getElementById('po3');
+        let po4 = document.getElementById('po4');
+        let po5 = document.getElementById('po5');
+        let count = 1;
+        imgview();
+        N_bt.addEventListener('click', function () {
+           console.log("count= ", count);
+           if(count<5){
+            count++;
+            imgview();
+           } 
+        });
+        B_bt.addEventListener('click', function () {
+            console.log("count= ", count);
+            if(count>1){
+                count--;
+                imgview();
+            }
+        });
+        po1.addEventListener("click", function () {
+            count=1;
+            imgview();
+        });
+        po2.addEventListener('click', function () {
+            count=2;
+            imgview();
+        });
+        po3.addEventListener('click', function () {
+            count=3;
+            imgview();
+        });
+        po4.addEventListener('click', function () {
+            count=4;
+            imgview();
+        });
+        po5.addEventListener('click', function () {
+            count=5;
+            imgview();
+        });
+        function imgview() {
+            img01.style.display = 'none';
+            img02.style.display = 'none';
+            img03.style.display = 'none';
+            img04.style.display = 'none';
+            img05.style.display = 'none';
+            if(count==1){
+                img01.style.display = 'block';
+            }else if(count==2){
+                img02.style.display = 'block';
+            }else if(count==3){
+                img03.style.display = 'block';
+            }else if(count==4){
+                img04.style.display = 'block';
+            }else if(count==5){
+                img05.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

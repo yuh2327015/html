@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사진첩 복습</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        section{height: 350px; background-color: pink; text-align: center;
+        position: relative;}
+        .slide{position: absolute; width: 900px; top: 50%; left: 50%;
+        transform: translateX(-50%)translateY(-50%);}
+        article{width: 500px; height: 250px; background-color: black; 
+            margin: 30px auto 0 auto; position: relative; float: left;}
+        #B_bt,#N_bt{margin-top: 100px; float: left;}
+        article img{width: 500px; height: 250px; position: absolute;
+        top: 0; left: 0; display: none;}
+        .point{display: inline-block; margin-right: 10px;}
+        .point img{width: 20px;}
+    </style>
+</head>
+<body>
+    <section>
+        <!-- [0] -->
+        <div class="slide">
+            <img src="image/back.png" alt="" id="B_bt">
+            <article>
+                <!-- [1]~[5] -->
+                <img src="image/image01.JPG" alt="">
+                <img src="image/image02.JPG" alt="">
+                <img src="image/image03.JPG" alt="">
+                <img src="image/image04.JPG" alt="">
+                <img src="image/image05.JPG" alt="">
+            </article>
+            <!-- [6] -->
+            <img src="image/next.png" alt="" id="N_bt">
+        </div>
+        <br>
+        <ul id="points">
+            <li class="point" id="po1">
+                <img src="image/point.png" alt="">
+            </li>
+            <li class="point" id="po2">
+                <img src="image/point.png" alt="">
+            </li>
+            <li class="point" id="po3">
+                <img src="image/point.png" alt="">
+            </li>
+            <li class="point" id="po4">
+                <img src="image/point.png" alt="">
+            </li>
+            <li class="point" id="po">
+                <img src="image/point.png" alt="">
+            </li>
+        </ul>
+    </section>
+    <script>
+        let image = document.getElementsByTagName('img');
+        let count = 1;
+        image[6].addEventListener('click',function (){
+            if(count<5){
+                count ++;
+                console.log("count=",count);
+                imgView();
+            }
+        });
+        image[0].addEventListener('click',function(){
+            if(count>1){
+                count--;
+                console.log("count=",count);
+                imgView();
+            }
+        })
+        // count의 값에 따라 display가 보이게 하는 함수 만들기
+        function imgView(){
+            image[1].style.display = 'none';
+            image[2].style.display = 'none';
+            image[3].style.display = 'none';
+            image[4].style.display = 'none';
+            image[5].style.display = 'none';
+            if(count==1){
+                image[1].style.display = 'block';
+            }else if(count==2){
+                image[2].style.display ='block';
+            }else if(count==3){
+                image[3].style.display ='block';
+            }else if(count==4){
+                image[4].style.display = 'block';
+            }else if(count==5){
+                image[5].style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

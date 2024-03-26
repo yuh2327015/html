@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경색 변경하기</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .div1{height: 150px; background-color: gray;}
+        #bt_test1{ height: 150px; background-color: pink;}
+        #bt_test2{height: 150px; background-color: yellow;}
+        .div1 #bts b{color: black;}
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <div id="bts">
+            <b id="bt1">분홍</b>
+            <b id="bt2">노랑</b>
+        </div>
+    </div>
+    <script>
+        let div_bt1 = document.getElementById("bt1");
+        let div_bt2 =document.getElementById('bt2');
+        let bts=document.getElementById("bts");
+        div_bt1.addEventListener("click", function () {
+            bts.id="bt_test1";
+        });
+        div_bt2.addEventListener("click", function(){
+            bts.id="bt_test2";
+        });
+    </script>
+</body>
+</html>
